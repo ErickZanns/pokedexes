@@ -1,0 +1,52 @@
+<!-- pokedex.component.html -->
+<section class="imagePoke">
+    <img [src]="imageURL" alt="Pokemon">
+    <div class="controls-container">
+        <button class="control-btn" (click)="previousPokemon()">◀</button>
+        <div class="control-center"></div>
+        <button class="control-btn" (click)="nextPokemon()">▶</button>
+    </div>
+</section>
+<div class="imagePoke">
+    <img src="pokemon-image-url.jpg" alt="Pokemon">
+    
+    <!-- Botón de información -->
+    <button class="info-btn" onclick="toggleInfo()">i</button>
+    
+    <!-- Cuadro emergente de información del ataque -->
+    <div class="info-popup" id="infoPopup">
+        <h3>Ataque</h3>
+        <p>Descripción del ataque del Pokémon. Aquí puedes incluir más detalles sobre el efecto del ataque.</p>
+    </div>
+</div>
+<div class="imagePoke">
+    <img [src]="imageURL" alt="Pokemon">
+
+    <!-- Botón de información -->
+    <button class="info-btn" (click)="toggleInfoPopup()">i</button>
+
+    <!-- Cuadro emergente de información del ataque -->
+    <div class="info-popup" *ngIf="showInfo">
+        <h3>{{ attackInfo.name }}</h3>
+        <p>{{ attackInfo.description }}</p>
+    </div>
+</div>
+
+<div class="imagePoke">
+    <img [src]="imageURL" alt="Pokemon">
+
+    <!-- Botón de información -->
+    <button class="info-btn" (click)="toggleInfoPopup()">i</button>
+
+    <!-- Cuadro emergente de información del ataque -->
+    <div class="info-popup" *ngIf="showInfo">
+        <h3>{{ attackInfo.name }}</h3>
+        <p>{{ attackInfo.description }}</p>
+    </div>
+</div>
+
+<!-- Canvas para el Spider Chart -->
+<div class="radar-chart-container">
+    <canvas #radarChart></canvas>
+</div>
+

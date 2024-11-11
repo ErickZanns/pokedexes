@@ -1,0 +1,135 @@
+/* pokedex.component.css */
+
+.imagePoke {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    position: relative; /* Permite posicionar el botón en la esquina superior derecha */
+}
+
+.imagePoke img {
+    max-width: 100%;
+    height: 300px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* Botón de información ("i") en la esquina superior derecha */
+.info-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background-color: blue;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.info-btn:hover {
+    background-color: #003399;
+}
+
+/* Cuadro emergente de información del ataque */
+.info-popup {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+}
+
+/* Mostrar cuadro emergente cuando está activo */
+.imagePoke .info-popup.active {
+    display: block;
+}
+
+.info-popup h3 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: red;
+}
+
+.info-popup p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.controls-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #333;
+}
+
+.control-btn {
+    width: 30px;
+    height: 30px;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    background: none;
+    border: none;
+}
+
+.control-btn:hover {
+    color: #ff4d4d;
+    transform: scale(1.2);
+}
+
+.control-btn:active {
+    color: #cc0000;
+    transform: scale(0.9);
+}
+
+/* Eliminar el botón central */
+.control-center {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .imagePoke img {
+        height: 250px;
+    }
+
+    .controls-container {
+        gap: 15px;
+        padding: 8px 15px;
+    }
+
+    .control-btn {
+        width: 25px;
+        height: 25px;
+        font-size: 18px;
+    }
+}
+
+.radar-chart-container {
+    width: 300px;
+    margin-top: 20px;
+}
+

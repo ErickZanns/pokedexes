@@ -1,0 +1,60 @@
+<div class="stats-container">
+    <div class="screen-border">
+        <div class="screen">
+            <!-- Número de Pokémon -->
+            <div class="header-info">
+                <span class="pokemon-id">{{id}}</span>
+            </div>
+
+            <!-- Cuadro para el nombre del Pokémon -->
+            <div class="pokemon-name-box">
+                <h2 class="pokemon-name">{{nombrePokemon}}</h2>
+            </div>
+
+            <!-- Sección de información básica -->
+
+            <div class="pokemon-info">
+                <!-- Línea decorativa para el tipo -->
+                <div class="type-line"></div>
+                <div class="type-badge" [class]="'type-' + tipoPokemon.toLowerCase()">
+                    {{tipoPokemon}}
+                </div>
+                <div class="type-line"></div>
+            </div>
+
+            <!-- Sección de estadísticas -->
+            <div class="stats-section">
+                <div class="stat-container">
+                    <label>HP</label>
+                    <div class="stat-bar">
+                        <div class="stat-fill hp" [style.width.%]="vidaPokemon"></div>
+                        <span class="stat-value">{{vidaPokemon}}/100</span>
+                    </div>
+                </div>
+
+                <div class="stat-container">
+                    <label>ATK</label>
+                    <div class="stat-bar">
+                        <div class="stat-fill atk" [style.width.%]="ataquePokemon"></div>
+                        <span class="stat-value">{{ataquePokemon}}/100</span>
+                    </div>
+                </div>
+
+                <div class="stat-container">
+                    <label>DEF</label>
+                    <div class="stat-bar">
+                        <div class="stat-fill def" [style.width.%]="defensaPokemon"></div>
+                        <span class="stat-value">{{defensaPokemon}}/100</span>
+                    </div>
+                    <div class="stats-container">
+                        <!-- Código existente de las estadísticas -->
+                        <div class="stat-container">
+                            <label>PESO</label>
+                            <span class="stat-value">{{pesoPokemon}} kg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
