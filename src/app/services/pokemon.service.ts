@@ -15,3 +15,14 @@ export class PokemonService {
     return this.http.get(`${this.apiUrl}/${pokemonName}`);
   }
 }
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
+
+getPokemonData(pokemonName: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${pokemonName}`).pipe(
+        catchError(error => {
+            console.error('Error fetching Pokémon data', error);
+            return of(null); // Devuelve un valor por defecto o null en caso de error
+        })
+    );
+}

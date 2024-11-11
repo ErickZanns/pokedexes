@@ -31,3 +31,7 @@ export class GraficoComponent implements OnChanges {
     }
   }
 }
+interface PokemonData {
+    weight: number;
+    // Otros atributos que necesites
+}
